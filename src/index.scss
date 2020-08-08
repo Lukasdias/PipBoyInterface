@@ -1,0 +1,40 @@
+:root {
+  --color-text-primary: #33a239;
+  --color-main-terminal: #5bf870;
+  font-size: 60%; /* controle das medidas rem */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, 
+body {
+  height: 100vh;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+}
+
+body {
+  background-color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+@media (min-width: 700px) {
+  :root {
+    font-size: 62.5%; /* todo 1rem vai ser relativo a 10px */
+  }
+}
+

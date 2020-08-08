@@ -1,0 +1,226 @@
+#container {
+    overflow: hidden;
+    header {
+        position: relative;
+        color: var(--color-text-primary);
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        border-bottom: 5px solid var(--color-text-primary);
+        padding: 0rem 3rem;
+        height: 13rem;
+        
+        div {
+            position: relative;
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+        }
+
+        h2 {
+            color: var(--color-text-primary);
+            font: 700 3rem Archivo;
+            padding: 5px;
+            margin-bottom: -.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            animation: glow 1s ease-in-out infinite alternate;
+            animation-name: glow;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+        }
+
+        h2:hover:not(.selected-node){
+            color: #4ecd6c;
+            transform: translateY(-7px);
+        }
+
+        .selected-node {
+            border-top: 5px solid var(--color-text-primary);
+            border-left: 5px solid var(--color-text-primary);
+            border-right: 5px solid var(--color-text-primary);
+        }
+
+        .translate-this {
+            animation-name: translateItems;
+            animation-duration:  .4s;
+            animation-iteration-count: initial;
+        }
+
+        .subnodes {
+            position: absolute !important;
+            left: 50%;
+            transform: translate(-51%, 0);
+            bottom: -5rem;
+            width: auto;
+            display: flex;
+            justify-content: space-between;
+
+            h3 {
+                margin: 0 .85rem;
+                font: 700 1.6rem Poppins;
+                cursor: pointer;
+                transition: all 0.3s ease-in-out;
+                animation-name: glow;
+                animation-duration: 2s;
+                animation-iteration-count: infinite;
+            }
+
+            h3:hover {
+                color: #4ecd6c;
+                transform: translateY(-7px);
+            }
+        }
+    }
+
+    main {
+        position: relative;
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 5rem 1rem;
+        margin: auto;
+        .status-bar {
+            position: absolute;
+            width: 15rem;
+            height: 2.35rem;
+            background-color: #4ecd6c;
+            display: flex;
+            animation-name: glow-box;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+        }
+
+        .top {
+            top: 0
+        }
+
+        .left1, .left2 {
+            left: 30%;
+        }
+
+        .right1, .right2 {
+            right: 30%;
+        }
+
+        .left1, .right1 {
+            top: 39%;
+        }
+
+        .left2, .right2{
+            top: 67%;
+        }
+
+        .bottom {
+            bottom: 0;
+        }
+
+        img {
+            height: 45vh;
+        }
+    }
+
+    footer {
+        width: 100%;
+        height: 4rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: .3rem;
+        div {
+            display: flex;
+            align-items: center;
+            padding: 0 3rem;
+            background: #1e5036b6;
+            h2 {
+                color : #4ecd6c;
+                animation-name: glow;
+                animation-duration: 2s;
+                animation-iteration-count: infinite;
+            }
+            .bar {
+                position: relative;
+                margin-left: 3rem;
+                width: 30rem;
+                height: 3rem;
+                border: 3px solid #4ecd6c;
+                background: none;
+                animation-name: glow-box;
+                animation-duration: 2s;
+                animation-iteration-count: infinite;
+            }
+            .fill-bar {
+                left: 0;
+                top: 0;
+                width: 60%;
+                height: 100%;
+                position: absolute;
+                display: flex;
+                background-color: #4ecd6c;
+                animation-name: glow-box;
+                animation-duration: 2s;
+                animation-iteration-count: infinite;
+            }
+        }
+        div.ap-bar {
+            justify-content: flex-end;
+        }
+    }
+}
+
+@keyframes glow {
+	0% {    
+		text-shadow: 0 0 -10px var(--color-main-terminal);
+	}
+	50% {
+		text-shadow: 1px 1px 10px var(--color-main-terminal);
+	}
+	100% {
+		text-shadow: 0 0 -10px var(--color-main-terminal);
+	}
+}
+
+@keyframes translateItems {
+    0% {
+        transform: translateX(100vw);
+    }
+    25%{
+        transform: translateX(75vw);
+    }
+    50% {
+        transform: translateX(50vw);
+    }
+    75% {
+        transform: translateX(25vw);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes glow-box {
+	0% {
+		box-shadow: 0 0 -10px var(--color-main-terminal);
+	}
+	50% {
+		box-shadow: 0 0 10px var(--color-main-terminal);
+	}
+	100% {
+		box-shadow: 0 0 -10px var(--color-main-terminal);
+	}
+}
+
+
+
+@media(min-width: 700px) {
+    #container {
+        header {
+            div {
+                width: 80%;
+                max-width: 900px;
+            }
+        }
+    }
+}
